@@ -1,0 +1,234 @@
+:root {
+  --seafoam: #85adb4;
+  --white: #fcfafa;
+  --light-gray: #888f92;
+  --burnt-orange: #ab7b48;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 80px;
+  padding: 2px;
+  position: relative;
+  width: 100%;
+  background-color: var(--seafoam);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid var(--white);
+  z-index: 10;
+}
+
+header h1 {
+  text-align: center;
+  flex: 1; /* to allow the h1 element to expand as needed */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+main {
+  height: 100%;
+  display: flex; /* enable flexbox for children */
+  flex-direction: row; /* align children in a row */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h3 {
+  margin-bottom: 15px;
+}
+
+.search-bar input[type=text] {
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+}
+#form{
+  font-size: 1.4rem;
+}
+#submit-button {
+  background-color: var(--burnt-orange);
+  color: var(--white);
+  font-size: 16px;
+  border-radius: 4%;
+  transition-duration: 0.4s;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+#submit-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#search-history {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Split the screen */
+.left,
+.right {
+  height: 94vh;
+  margin: 0;
+  padding: 10px;
+  background-color: var(--light-gray);
+  border: 3px solid var(--white);
+  overflow: hidden;
+  box-sizing: border-box; /* ensure padding and border are included in the height */
+}
+
+.left {
+  flex: 0 0 30%; /* set the element to exactly 30% of the container's width, without allowing it to grow or shrink. */
+}
+
+.right {
+  flex: 0 0 70%; /* set the element to exactly 70% of the container's width, without allowing it to grow or shrink. */
+}
+
+.left section {
+  padding: 20px;
+}
+
+.left h2 {
+  margin-bottom: 10px;
+}
+
+.container {
+  border: solid var(--white);
+  width: calc(100% - 6px);
+  min-height: 200px;
+  margin-bottom: 10px;
+  background-color: var(--white);
+}
+
+#forecast-section {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#forecast-header{
+  font-size: 2rem;
+}
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 16px;
+}
+
+.weather-card {
+  flex-direction: column;
+  border: solid var(--white);
+  margin: 10px;
+  text-align: left;
+  background: var(--seafoam);
+  border-radius: 10px;
+  padding: 20px;
+  height: 200px;
+  width: 300px;
+}
+#day1{
+  text-decoration: underline;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#day2{
+  text-decoration: underline;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#day3{
+  text-decoration: underline;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#day4{
+  text-decoration: underline;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#day5{
+  text-decoration: underline;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.weather-card .date {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.weather-details p {
+  margin: 5px 0;
+  color: black;
+}
+
+.weather-details span {
+  color: black;
+}
+
+/* used media query for responsive design */ 
+@media screen and (max-width: 768px) {
+  header {
+      flex-direction: column; /* stack header elements vertically */
+  }
+
+  header h1 {
+      margin-top: 10px;
+  }
+  
+  main {
+      flex-direction: column; /* stack main content vertically */
+  }
+
+  .left,
+  .right {
+      flex: 0 0 100%; /* so each side section takes full width */
+      height: auto; /* allow height to adjust based on content */
+  }
+
+  .search-bar input[type=text],
+  #submit-button {
+      width: 100%; /* so inputs and button span full width */
+      margin-right: 0; /* remove right margin */
+  }
+
+  .submit-button {
+      padding: 8px;
+      font-size: 14px; /* smaller button text and padding */
+  }
+
+  .weather-card {
+      flex-basis: 100%; /* so weather cards use full width */
+  }
+}

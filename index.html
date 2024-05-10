@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/script.js"defer></script>
+    <title>What's My Weather?</title>
+</head>
+
+<body>
+    <header>
+      <h1>🌦️ What's My Weather? 🌦️</h1> 
+    </header>
+<main>
+    <!-- left side -->
+    <div class="left">
+        <section>
+            <div class="search-bar">
+                <form id="form">
+                    <label for="searchbar"> Search for a city... </label>
+                    <br>
+                    <input id="searchbar" type="text" placeholder="City Name Here">
+                    <button type="submit" id="submit-button">Search</button>
+                </form>
+            </div>
+            <div id="search-history"></div>
+        </section>
+    </div>
+
+    <!-- right side -->
+    <div class="right"> 
+        <section id="dashboard"> <!-- section to host the weather forecast of the city the user searches for -->
+          <div class="container">
+            <div class="weather-details">
+              <h2> Search for a city to get the latest weather forecast </h2>
+                <div class="weather-details">
+                  <p>Temperature: <span id="temp-day-0"></span></p>
+                  <p>Wind Force: <span id="wind-day-0"></span></p>
+                  <p>Precipitation: <span id="humidity-day-0"></span></p>
+                </div>
+            </div>
+          </div>
+        </section>
+        
+        <section id="forecast-section"> <!-- section to host the five day weather forecast cards -->
+            <h3 class="forecast-header" id="forecast-header">Here's a look at the next five days!</h3>
+              <div class="forecast-container">
+                <!-- forecast cards-->
+                <article class="weather-card">
+                  <h4 class="date" id="day1"> Day 1 </h4>
+                    <div class="weather-details">
+                      <p>Temperature: <span id="temp-day-1"></span></p>
+                      <p>Wind Force: <span id="wind-day-1"></span></p>
+                      <p>Precipitation: <span id="humidity-day-1"></span></p>
+                    </div>
+                </article>
+
+              <article class="weather-card">
+                <h4 class="date" id="day2"> Day 2 </h4>
+                  <div class="weather-details">
+                    <p>Temperature: <span id="temp-day-2"></span></p>
+                    <p>Wind Force: <span id="wind-day-2"></span></p>
+                    <p>Precipitation: <span id="humidity-day-2"></span></p>
+                  </div>
+              </article>
+
+              <article class="weather-card">
+                <h4 class="date" id="day3"> Day 3 </h4>
+                  <div class="weather-details">
+                    <p>Temperature: <span id="temp-day-3"></span></p>
+                    <p>Wind Force: <span id="wind-day-3"></span></p>
+                    <p>Precipitation: <span id="humidity-day-3"></span></p>
+                  </div>
+              </article>
+
+              <article class="weather-card">
+                <h4 class="date" id="day4"> Day 4 </h4>
+                  <div class="weather-details">
+                    <p>Temperature: <span id="temp-day-4"></span></p>
+                    <p>Wind Force: <span id="wind-day-4"></span></p>
+                    <p>Precipitation: <span id="humidity-day-4"></span></p>
+                </div>
+              </article>
+
+              <article class="weather-card">
+                <h4 class="date" id="day5"> Day 5 </h4>
+                  <div class="weather-details">
+                    <p>Temperature: <span id="temp-day-5"></span></p>
+                    <p>Wind Force: <span id="wind-day-5"></span></p>
+                    <p>Precipitation: <span id="humidity-day-5"></span></p>
+                  </div>
+              </article>
+            </div>
+        </section>
+    </div>
+</main>
+</body>
+</html>
