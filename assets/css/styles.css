@@ -178,6 +178,8 @@ font-weight: 800px;
   padding: 20px;
   height: 200px;
   width: 300px;
+  color: black;
+  margin-bottom: 10px;
 }
 #day1{
   text-decoration: underline;
@@ -209,19 +211,53 @@ font-weight: 800px;
   text-align: center;
 }
 
-.weather-card .date {
-  font-size: 20px;
-  color: black;
-  margin-bottom: 10px;
-}
-
 .weather-details p {
+  font-size: 1.4rem;
   margin: 5px 0;
   color: black;
 }
 
 .weather-details span {
-  color: black;
+  color: rgb(152, 19, 19);
+  font-weight: 200;
+}
+
+.history-item {
+  cursor: pointer;
+  border-color: var(black);
+  padding: 5px;
+  margin: 5px 0;
+  background-color: var(--seafoam);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.history-item:hover {
+  background-color: var(--burnt-orange);
+}
+
+body {
+  transition: background 0.5s ease;
+}
+
+.clear {
+  background: url('path/to/clear.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.cloudy {
+  background: url('path/to/cloudy.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.rainy {
+  background: url('path/to/rainy.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.snowy {
+  background: url('path/to/snowy.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* used media query for responsive design */ 
