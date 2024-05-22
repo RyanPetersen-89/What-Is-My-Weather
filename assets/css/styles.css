@@ -84,9 +84,20 @@ h3 {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+#dashboard{
+
+}
+
 #search-history {
   margin-top: 10px;
   text-align: center;
+}
+
+#search-title{
+  border-top: white solid 7px;
+  padding-top: 30px;
+  font-size: 2rem;
+  text-decoration: underline;
 }
 
 /* Split the screen */
@@ -134,11 +145,27 @@ h3 {
 #forecast-header{
   font-size: 2rem;
 }
+
+#city-to-display{
+text-align: left;
+font-size: 2rem;
+font-weight: 800px;
+}
+
 .forecast-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   font-size: 16px;
+}
+
+.date-styling {
+  font-size: 1.4rem;
+  text-align: center;
+  color: black;
+  font-weight: 300;
+  margin: 2px;
+  border-bottom: solid black 2px;
 }
 
 .weather-card {
