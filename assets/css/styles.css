@@ -1,7 +1,7 @@
 :root {
   --seafoam: #85adb4;
   --white: #fcfafa;
-  --light-gray: #888f92;
+  --steel-blue: #5a7e8e;
   --burnt-orange: #ab7b48;
 }
 
@@ -58,21 +58,24 @@ h3 {
 
 .search-bar input[type=text] {
   padding: 6px;
-  border: none;
+  border: inset var(--seafoam) 5px;
+  border-radius: 50px;
   margin-top: 8px;
   margin-right: 16px;
-  font-size: 17px;
+  font-size: 1.8rem;
   text-align: center;
   width: 100%;
+  height: 50px;
 }
 #form{
-  font-size: 1.4rem;
+  font-size: 3rem;
 }
 #submit-button {
   background-color: var(--burnt-orange);
   color: var(--white);
   font-size: 16px;
-  border-radius: 4%;
+  border: outset black 4px;
+  border-radius: 100px;
   transition-duration: 0.4s;
   width: 100%;
   margin-top: 20px;
@@ -84,9 +87,6 @@ h3 {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-#dashboard{
-
-}
 
 #search-history {
   margin-top: 10px;
@@ -106,7 +106,7 @@ h3 {
   height: 94vh;
   margin: 0;
   padding: 10px;
-  background-color: var(--light-gray);
+  background-color: var(--steel-blue);
   border: 3px solid var(--white);
   overflow: hidden;
   box-sizing: border-box; /* ensure padding and border are included in the height */
@@ -129,11 +129,9 @@ h3 {
 }
 
 .container {
-  border: solid var(--white);
   width: calc(100% - 6px);
   min-height: 200px;
   margin-bottom: 10px;
-  background-color: var(--white);
 }
 
 #forecast-section {
@@ -144,12 +142,6 @@ h3 {
 
 #forecast-header{
   font-size: 2rem;
-}
-
-#city-to-display{
-text-align: left;
-font-size: 2rem;
-font-weight: 800px;
 }
 
 .forecast-container {
@@ -211,13 +203,12 @@ font-weight: 800px;
   text-align: center;
 }
 
-.weather-details p {
-  font-size: 1.4rem;
+.weather-details p{
   margin: 5px 0;
   color: black;
 }
 
-.weather-details span {
+.weather-details span{
   color: rgb(152, 19, 19);
   font-weight: 200;
 }
@@ -228,52 +219,84 @@ font-weight: 800px;
   padding: 5px;
   margin: 5px 0;
   background-color: var(--seafoam);
-  border-radius: 5px;
+  border: outset black 3px;
+  border-radius: 50px;
   text-align: center;
 }
 
-.history-item:hover {
+.history-item:hover{
   background-color: var(--burnt-orange);
 }
 
-body {
+#today-forecast{
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 3.4rem;
+}
+
+#dashboard.cloudy #today-forecast span{
+  color: #004b4c;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+#today-forecast p{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+#dashboard{
   transition: background 0.5s ease;
+  border: solid white 5px;
+  border-radius: 100px;
+  padding: 15px;
 }
 
-.clear {
-  background: url('path/to/clear.jpg') no-repeat center center fixed;
-  background-size: cover;
+#dashboard.clear {
+  background-image: url('../imgs/Sunny.jpg');
+  background-size: cover; /* or use 'contain' or specify dimensions */
+  background-position-y: -190px ;
+  background-repeat: no-repeat;
 }
 
-.cloudy {
-  background: url('path/to/cloudy.jpg') no-repeat center center fixed;
-  background-size: cover;
+#dashboard.rainy {
+  background-image: url('../imgs/Rainy.jpg');
+  background-size: cover; /* or use 'contain' or specify dimensions */
+  background-position: top;
+  background-repeat: no-repeat;
 }
 
-.rainy {
-  background: url('path/to/rainy.jpg') no-repeat center center fixed;
-  background-size: cover;
+#dashboard.cloudy {
+  background-image: url('../imgs/Cloudy.jpg');
+  background-size: cover; /* or use 'contain' or specify dimensions */
+  background-position-x: center;
+background-position-y: -150px;
+  background-repeat: no-repeat;
 }
 
-.snowy {
-  background: url('path/to/snowy.jpg') no-repeat center center fixed;
-  background-size: cover;
+#dashboard.snowy {
+  background-image: url('../imgs/Snowy.jpg');
+  background-size: cover; /* or use 'contain' or specify dimensions */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* used media query for responsive design */ 
 @media screen and (max-width: 768px) {
   header {
-      flex-direction: column; /* stack header elements vertically */
+    flex-direction: column; /* stack header elements vertically */
   }
-
+  
   header h1 {
-      margin-top: 10px;
+    margin-top: 10px;
   }
   
   main {
-      flex-direction: column; /* stack main content vertically */
+    flex-direction: column; /* stack main content vertically */
   }
-
+  
   .left,
   .right {
       flex: 0 0 100%; /* so each side section takes full width */
