@@ -13,6 +13,8 @@
 
  - Project Links
 
+ - Collaborators
+
 <br>
 
 ## Project Goal
@@ -72,3 +74,7 @@ As long as this gets a higher score than I originally got I'd say the final outc
 ### Launch Page: [Deployed Project]()
 
 ___
+
+## Collaborators
+
+### Kaila Ronquillo: [GitHub](https://github.com/girlnotfound)
