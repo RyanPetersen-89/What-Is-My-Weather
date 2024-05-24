@@ -82,8 +82,8 @@ h3 {
   padding: 10px;
   background-color: var(--steel-blue);
   border: 3px solid var(--white);
-  overflow: hidden;
   box-sizing: border-box; /* ensure padding and border are included in the height */
+  overflow-y: auto;
 }
 
 .left {
@@ -92,6 +92,7 @@ h3 {
 
 .right {
   flex: 0 0 70%; /* set the element to exactly 70% of the container's width, without allowing it to grow or shrink. */
+  
 }
 
 .left section {
@@ -304,38 +305,310 @@ background-position-y: -150px;
 /***************                   ******************/
 /****************************************************/
 
-/* used media query for responsive design */ 
-@media screen and (max-width: 768px) {
+/**********************************************************************/
+/****************************** @992px ********************************/
+/**********************************************************************/
+
+@media screen and (max-width: 992px) {
+  :root {
+    --seafoam: #85adb4;
+    --white: #fcfafa;
+    --steel-blue: #5a7e8e;
+    --burnt-orange: #ab7b48;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
   header {
-    flex-direction: column; /* stack header elements vertically */
+    height: 80px;
+    padding: 2px;
+    position: relative;
+    width: 100%;
+    background-color: var(--seafoam);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid var(--white);
+    z-index: 10;
   }
   
   header h1 {
-    margin-top: 10px;
+    text-align: center;
+    flex: 1; /* to allow the h1 element to expand as needed */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 800;
+    overflow-y: scroll;
   }
   
   main {
-    flex-direction: column; /* stack main content vertically */
+    height: 100%;
+    display: flex; /* enable flexbox for children */
+    flex-direction: row; /* align children in a row */
   }
   
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  h3 {
+    margin-bottom: 15px;
+  }
+  
+  /****************************************************/
+  /****************                 *******************/
+  /****************  Classes Below  *******************/
+  /****************                 *******************/
+  /****************************************************/
+  
+  .search-bar input[type=text] {
+    padding: 6px;
+    border: inset var(--seafoam) 5px;
+    border-radius: 50px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+  }
+  
+  /* Split the screen */
   .left,
   .right {
-      flex: 0 0 100%; /* so each side section takes full width */
-      height: auto; /* allow height to adjust based on content */
+    height: 94vh;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--steel-blue);
+    border: 3px solid var(--white);
+    box-sizing: border-box; /* ensure padding and border are included in the height */
   }
-
-  .search-bar input[type=text],
-  #submit-button {
-      width: 100%; /* so inputs and button span full width */
-      margin-right: 0; /* remove right margin */
+  
+  .left {
+    flex: 0 0 30%; /* set the element to exactly 30% of the container's width, without allowing it to grow or shrink. */
   }
-
-  .submit-button {
-      padding: 8px;
-      font-size: 14px; /* smaller button text and padding */
+  
+  .right {
+    flex: 0 0 70%; /* set the element to exactly 70% of the container's width, without allowing it to grow or shrink. */
+    overflow-y: auto;
   }
-
+  
+  .left section {
+    padding: 20px;
+  }
+  
+  .left h2 {
+    margin-bottom: 10px;
+  }
+  
+  .container {
+    width: calc(100% - 6px);
+    min-height: 200px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 16px;
+  }
+  
+  .date-styling {
+    font-size: 1.4rem;
+    text-align: center;
+    color: black;
+    font-weight: 300;
+    margin: 2px;
+    border-bottom: solid black 2px;
+  }
+  
   .weather-card {
-      flex-basis: 100%; /* so weather cards use full width */
+    flex-direction: column;
+    border: solid var(--white);
+    margin: 10px;
+    text-align: left;
+    background: var(--seafoam);
+    border-radius: 10px;
+    padding: 20px;
+    height: 200px;
+    width: 300px;
+    color: black;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+  
+  .weather-details p{
+    margin: 5px 0;
+    color: black;
+  }
+  
+  .weather-details span{
+    color: rgb(152, 19, 19);
+    font-weight: 200;
+  }
+  
+  .history-item {
+    cursor: pointer;
+    border-color: var(black);
+    padding: 5px;
+    margin: 5px 0;
+    background-color: var(--seafoam);
+    border: outset black 3px;
+    border-radius: 50px;
+    text-align: center;
+  }
+  
+  .history-item:hover{
+    background-color: var(--burnt-orange);
+  }
+  
+  /****************************************************/
+  /*****************              *********************/
+  /*****************  ID's Below  *********************/
+  /*****************              *********************/
+  /****************************************************/
+  
+  #form{
+    font-size: 3rem;
+  }
+  #submit-button {
+    background-color: var(--burnt-orange);
+    color: var(--white);
+    font-size: 16px;
+    border: outset black 4px;
+    border-radius: 100px;
+    transition-duration: 0.4s;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 30px;
+  }
+  
+  #submit-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  
+  #search-history {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  #search-title{
+    border-top: white solid 7px;
+    padding-top: 30px;
+    font-size: 2rem;
+    text-decoration: underline;
+  }
+  
+  #forecast-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  #forecast-header{
+    font-size: 2rem;
+  }
+  
+  #day1{
+    text-decoration: underline;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  #day2{
+    text-decoration: underline;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  #day3{
+    text-decoration: underline;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  #day4{
+    text-decoration: underline;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  #day5{
+    text-decoration: underline;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  #today-forecast{
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 3.4rem;
+  }
+  
+  #dashboard.cloudy #today-forecast span{
+    color: #004b4c;
+    text-decoration: none;
+    font-weight: 800;
+  }
+  
+  #today-forecast p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  #dashboard{
+    transition: background 0.5s ease;
+    border: solid white 5px;
+    border-radius: 100px;
+    padding: 15px;
+  }
+  
+  #dashboard.clear {
+    background-image: url('../imgs/Sunny.jpg');
+    background-size: cover; /* or use 'contain' or specify dimensions */
+    background-position-y: -190px ;
+    background-repeat: no-repeat;
+  }
+  
+  #dashboard.rainy {
+    background-image: url('../imgs/Rainy.jpg');
+    background-size: cover; /* or use 'contain' or specify dimensions */
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  
+  #dashboard.cloudy {
+    background-image: url('../imgs/Cloudy.jpg');
+    background-size: cover; /* or use 'contain' or specify dimensions */
+    background-position-x: center;
+  background-position-y: -150px;
+    background-repeat: no-repeat;
+  }
+  
+  #dashboard.snowy {
+    background-image: url('../imgs/Snowy.jpg');
+    background-size: cover; /* or use 'contain' or specify dimensions */
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
+

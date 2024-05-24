@@ -7,7 +7,7 @@ const cityDisplay = document.getElementById('city-display');
 function getApi(event) {
   event.preventDefault(); // Prevent form submission and page reload
   const citySearch = document.getElementById('searchbar').value;
-  const LocationLookUp = `http://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=imperial&appid=${apiKey}`;
+  const LocationLookUp = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=imperial&appid=${apiKey}`;
 
   // Fetching weather data to get lat and lon
   $.get(LocationLookUp, function(data) {
